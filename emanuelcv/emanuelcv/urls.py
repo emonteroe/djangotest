@@ -14,12 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 
 from boards import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('boards/<int:pk>/', views.board_topics, name='board_topics'), #django2 uses this format.
+    #re_path(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'), #old way to do it in Django 1.1 using regex
     path('admin/', admin.site.urls),
 ]

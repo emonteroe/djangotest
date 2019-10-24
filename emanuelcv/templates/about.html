@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  {{ board.name }} - {{ block.super }}
+{% endblock %}
+
+{% block breadcrumb %}
+ <li class="breadcrumb-item"><a href="{% url 'home' %}">Boards</a></li>
+  <!-- <li class="breadcrumb-item active">{{ board.name }}</li>-->  
+  <li class="breadcrumb-item active">About</li>
+{% endblock %}
+
+{% block content %}
+
+    <tbody>
+      This is a test of Django, for the sake of humanity.
+    </tbody>
+  
+{% endblock %}
