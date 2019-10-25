@@ -22,7 +22,7 @@ from boards import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
-    path('boards/<int:pk>/', views.board_topics, name='board_topics'), #django2 uses this format.
-    #re_path(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'), #old way to do it in Django 1.1 using regex
+    path('boards/<int:pk>/', views.board_topics, name='board_topics'), 
+    path('boards/<int:pk>/new/', views.new_topic, name='new_topic'),
     path('admin/', admin.site.urls),
 ]
