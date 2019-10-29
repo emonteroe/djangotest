@@ -12,22 +12,10 @@
 
 {% block content %}
   <form method="post" novalidate>
-    {% csrf_token %}
+  {% csrf_token %}
 
-    {% for field in form %}
-      <div class="form-group">
-        {{ field.label_tag }}
+  {% include 'includes/form.html' %}
 
-        {% render_field field class="form-control" %}
-
-        {% if field.help_text %}
-          <small class="form-text text-muted">
-            {{ field.help_text }}
-          </small>
-        {% endif %}
-      </div>
-    {% endfor %}
-
-    <button type="submit" class="btn btn-success">Post</button>
-  </form>
+  <button type="submit" class="btn btn-success">Post</button>
+</form>
 {% endblock %}
